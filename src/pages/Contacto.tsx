@@ -25,7 +25,7 @@ const Contacto = () => {
   }
 
   try {
-    const response = await fetch("/api/send", {
+    const response = await fetch("https://intelnet-digital-forge.vercel.app/api/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
