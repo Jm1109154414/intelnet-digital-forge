@@ -1,6 +1,37 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6GES8EJ4T"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B6GES8EJ4T');
+    </script>
+    <script>
+      document.addEventListener('click', function (e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href') || '';
+      const isWhatsApp =
+        href.includes('wa.me/') ||
+        href.includes('api.whatsapp.com/') ||
+        href.includes('whatsapp://send');
+
+      if (!isWhatsApp) return;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_click', {
+          event_category: 'engagement',
+          event_label: href,
+          value: 1
+        });
+      }
+    });
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intelnet - Soluciones Tecnológicas Inteligentes</title>
